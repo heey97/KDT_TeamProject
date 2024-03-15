@@ -2,13 +2,9 @@ DROP TABLE KDT_COMMENTS;
 DROP TABLE KDT_COMMUNITY; 
 DROP TABLE KDT_NOTICE; 
 DROP TABLE KDT_BUYLIST; 
-DROP TABLE KDT_SELLLIST; 
 DROP TABLE kdt_images;
-DROP TABLE KDT_MEMBER; 
-
- alter
- 
- 
+DROP TABLE KDT_SELLLIST; 
+DROP TABLE KDT_MEMBER;
 
 CREATE  Table kdt_member (
   id varchar2(100) PRIMARY KEY,
@@ -17,9 +13,9 @@ CREATE  Table kdt_member (
   birth char(8) NOT NULL,
   gender varchar2(10) NOT NULL,
   phonenum varchar2(100) NOT NULL,
-  email varchar2(100),
-  add_state varchar2(100) ,
+  email varchar2(100),   
   add_city varchar2(100) ,
+  add_state varchar2(100) ,
   add_dong varchar2(100) ,
   add_details varchar2(100) ,
   postalcode varchar2(100) ,
@@ -27,14 +23,16 @@ CREATE  Table kdt_member (
   reg_date DATE DEFAULT sysdate
 );
 
+
+
 CREATE  Table kdt_selllist (
+  pdt_code varchar2(100) PRIMARY KEY,
   sell_id varchar2(100) NOT NULL,
   category varchar2(100) NOT NULL,
-  pdt_code varchar2(100) PRIMARY KEY,
-  pdt_name varchar2(100) NOT NULL,
   price NUMBER(10) NOT NULL,
   read_cnt NUMBER(10) DEFAULT 0,
   title varchar2(100) NOT NULL,
+  contents varchar2(3000),   
   sell_location varchar2(100),
   sell_stt char(1) DEFAULT 'N',
   sell_date DATE DEFAULT sysdate,
@@ -42,35 +40,37 @@ CREATE  Table kdt_selllist (
 );
 
 
-CREATE  TABLE kdt_images(
+/*
+    CREATE  TABLE kdt_files(
    idx number(2) PRIMARY KEY,
-   image varchar2(200),
-   pdt_code varchar2(100) NOT NULL,
-   FOREIGN KEY (pdt_code) REFERENCES kdt_selllist(pdt_code)
-);
+   
+   selllist_idx   number(2),   
+   notice_idx   number(2),   
+   community_idx number(2),
+   
+   att_file varchar2(200),
+   up_file varchar2(200),
+   FOREIGN KEY (mem_id) REFERENCES kdt_member(id)
+);*/
 
 CREATE  Table kdt_buylist (
-   pdt_code varchar2(100) PRIMARY KEY,
-   pdt_name varchar2(100) NOT NULL,
-   price number(10) NOT NULL,
+   pdt_code varchar2(100) PRIMARY KEY
+   sell_id varchar2(100) NOT NULL,   
+   price number(10) NOT NULL,      
+   title varchar2(100) NOT NULL,   
    pay_id varchar2(100) NOT NULL,
-   pay_type varchar2(100) NOT NULL,
-   pay_key varchar2(100) NOT NULL,
+   pay_type varchar2(100) ,
+   pay_key varchar2(100) ,
    pay_date DATE DEFAULT sysdate,
      FOREIGN KEY (pdt_code) REFERENCES kdt_selllist(pdt_code),
-     FOREIGN KEY (pay_id) REFERENCES kdt_member(id)
+     FOREIGN KEY (sell_id) REFERENCES kdt_member(id)
 );
-CREATE SEQUENCE kdt_buylist_idx_seq;
-
-
 
 CREATE Table kdt_notice  (
    idx number(10) PRIMARY KEY,
    title varchar2(100) NOT NULL,
    contents varchar2(3000),
    read_cnt number(10) DEFAULT 0,
-   att_file varchar2(200),
-   up_file varchar2(200),
    crt_date DATE DEFAULT sysdate
 );
 CREATE SEQUENCE kdt_notice_idx_seq;
@@ -82,8 +82,6 @@ CREATE Table kdt_community  (
    contents varchar2(3000),
    read_cnt number(10) DEFAULT 0,
    comment_cnt NUMBER(10),
-   att_file varchar2(200),
-   up_file varchar2(200),
    crt_date DATE DEFAULT sysdate,
    FOREIGN KEY (writer_id) REFERENCES kdt_member(id)
 );
@@ -103,5 +101,3 @@ CREATE Table kdt_comments  (
 );
 CREATE SEQUENCE kdt_comments_idx_seq;
 CREATE SEQUENCE kdt_comments_self_idx_seq;
-
-

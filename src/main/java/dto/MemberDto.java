@@ -25,8 +25,8 @@ public class MemberDto {
 	private String gender;
 	private String phonenum;
 	private String email;
-	private String add_state;
 	private String add_city;
+	private String add_state;
 	private String add_dong;
 	private String add_details;
 	private String postalCode;

@@ -194,7 +194,7 @@
          contentType: 'application/json', 
           success : function(res){
             alert(res);
-            location.href = "./login";
+            location.href = "./index.jsp";
           },
           error : function(xhr){
             console.log(xhr);
@@ -338,7 +338,7 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/map.daum.js"></script>
 			<script src="assets/js/script.js"></script>
-			<script src="js/join.js"></script>
+			<script src="registerFront/js/join.js"></script>
 			
 <!-- 계정 : wonder , 패스워드 : thGH123!@4 -->
 </body>

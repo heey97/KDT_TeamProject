@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/타이틀이미지.svg">
 <style>
 @font-face {
 	font-family:'당근';
@@ -15,11 +16,15 @@
 *{
 	font-family: '당근';	
 }
-
+body{
+padding-top:75px;
+}
 .nav_div{
 	width: 100%;
 	margin:auto;
 	background: white;
+	position:fixed;
+	z-index:1;
 }
 
 .nav_content_in{
@@ -85,7 +90,7 @@
 		<!-- 중고거래 / 인기거래 / 동네이야기 / 공지사항 / 마이페이지  -->
 		<nav class='nav_div'>
 			<div class="container-btn">
-				<button type="button" class="nav_right_button" onclick="/join')">회원가입</button>
+				<button type="button" class="nav_right_button" onclick="location.href='${pageContext.request.contextPath}/register/join.jsp'">회원가입</button>
 				<button type="button" class="nav_right_button" onclick="login')">로그인</button>
 				<button type="button" class="nav_right_button" onclick="/mypage')">마이페이지</button>
 			</div>

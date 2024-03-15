@@ -6,8 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>중고마켓</title>
-<link rel="shortcut icon" type="image/x-icon" href="assets/images/타이틀이미지.svg">
-<!-- <link rel="stylesheet" href="assets/css/pumpkin.css"> -->
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
 </head>

@@ -18,7 +18,5 @@ public class NoticeDto {
 	private String title;
 	private String contents;
 	private int read_cnt;
-	private String att_file;
-	private String up_file;
 	private Timestamp crt_date;
 }

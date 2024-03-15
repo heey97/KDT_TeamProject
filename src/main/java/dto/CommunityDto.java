@@ -21,7 +21,5 @@ public class CommunityDto {
 	private String contents;
 	private int read_cnt;
 	private int comment_cnt;
-	private String att_file;
-	private String up_file;
 	private Timestamp crt_date;
 }

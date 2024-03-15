@@ -11,8 +11,6 @@
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 		<meta http-equiv="Pragma" content="no-cache">
 		<meta http-equiv="Expires" content="0">
-		<link rel="stylesheet" href="../assets/css/main.css" />
-  		<link rel="stylesheet" href="../css/layout.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath}communityFront/css/list.css">
 		<script src="https://kit.fontawesome.com/352c53403e.js" crossorigin="anonymous"></script>
 </head>
@@ -21,7 +19,7 @@
 	<%@ include file="../layout/header.jsp" %>
 	<section style="overflow: hidden;" id="list">
   	
-	<div style="padding: 2rem;width: 60rem;margin: auto;" class="table" >
+	<div style="width: 60rem;" class="table" >
 	<div>
 		<h3>동네 이야기</h3>
 		<p>오늘의 최신 글</p>
@@ -144,7 +142,6 @@
 			<script src="../assets/js/browser.min.js"></script>
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
 			<script src="../js/nav.js"></script>
 			
 </body>

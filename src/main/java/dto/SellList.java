@@ -12,13 +12,13 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SellList {
+	private String pdt_code;
 	private String sell_id;
 	private String catogory;
-	private String pdt_code;
-	private String pdt_name;
 	private int price;
 	private int read_cnt;
 	private String title;
+	private String contents;
 	private String sell_location;
 	private String sell_stt;
 	private Timestamp sell_date;

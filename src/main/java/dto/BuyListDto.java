@@ -18,10 +18,10 @@ import lombok.ToString;
 @Builder
 public class BuyListDto{
 	private String pdt_code;
-	private String pdt_name;
+	private String sell_id;
 	private int price;
+	private String title;
 	private String pay_id; 
-	private String pay_name;
 	private String pay_type;
 	private String pay_key;
 	@JsonFormat(shape = Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
